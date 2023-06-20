@@ -1,6 +1,6 @@
 /* https://giphy.com/stickers/shock-gorgeous-thomas-mu9RGWpXVfSpLzuv4W */
 
-@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Oswald&display=swap');
 
 html {
   box-sizing: border-box;
@@ -22,6 +22,35 @@ body {
   background-repeat: no-repeat;
   background-size: 40%;
   background-position: 5% center;
+}
+
+.message-container {
+  font-family: 'Oswald', sans-serif;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  max-width: 90%;
+  width: 1000px;
+  box-shadow: 0 0 3px 0px black;
+  background-color: #73A9AD;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+#button-container svg {
+  font-size: 2rem;
+  height: 5rem;
+  margin-top: 20px;
+  cursor: pointer;
+  transform: rotate(0deg) scale(1);
+  transition: transform .3s ease-in-out;
+}
+#button-container svg:hover {
+  transform: rotate(360deg) scale(1.2);
+}
+
+#message {
+  padding: 20px;
 }
 
 button {
@@ -49,6 +78,16 @@ button:disabled {
   cursor: wait;
   filter: brightness(40%);
 }
+
+/* message dots animation */
+@keyframes blink {
+  50% { 
+    color: transparent 
+  }
+}
+.dot { animation: 1s blink infinite }
+.dot:nth-child(2) { animation-delay: 250ms }
+.dot:nth-child(3) { animation-delay: 500ms }
 
 /* smaller devices */
 @media (orientation: portrait) {
