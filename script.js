@@ -43,7 +43,7 @@ async function getAudio(text) {
       src: text,
       r: '0',
       c: 'mp3',
-      f: '8khz_8bit_mono',
+      f: '22khz_16bit_mono',
       b64: true,
     })
   };
@@ -79,4 +79,8 @@ async function getJoke() {
 button.addEventListener('click', getJoke);
 
 // replay last joke
-replayButton.addEventListener('click', ()=> audioElement.play())
+replayButton.addEventListener('click', ()=> {
+  audioElement.pause();
+  audioElement.currentTime = 0;
+  audioElement.play();
+})
